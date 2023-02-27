@@ -1,27 +1,27 @@
-#include<bits/stdc++.h>
+#include<iostream>
 using namespace std;
-void print(int arr[], int n)
+void print(int a[], int size)
 {
-    for(int i=0;i<n;i++)
-        cout<<arr[i]<<" ";
+    for(int i=0;i<size;i++)
+        cout<<a[i]<<" ";
     cout<<endl;
 }
-void selectionSort(int arr[], int n)
+void selectionSort(int a[], int n)
 {
-    int i,j,min_in;
-    for(i=0;i<n;i++)
+//let i be the index of smallest element
+    for(int i=0;i<n;i++)
     {
-        min_in = i;
-        for(j=i+1;j<n;j++)
-            if (arr[j] < arr[min_in])
-                min_in = j;
-        swap(arr[i],arr[min_in]);
+        for(int j=i+1;j<n;j++)
+            if (a[j] < a[i])
+        swap(a[i],a[j]);
+        //swap the smallest element found with the first element
+        //same for 2nd smallest and so on...
     }
 }
-int main(int argv, char* argc[])
+int main()
 {
     int arr[] = {5,4,10,1,6,2};
-    int i,j,n,temp;
+	int n;
     n = sizeof(arr)/sizeof(int);
     cout<<"Unsorted Array :";
     print(arr,n);
